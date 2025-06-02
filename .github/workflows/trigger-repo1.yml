@@ -1,0 +1,17 @@
+name: Trigger Repo1 Webhook
+on:
+  push:
+    branches:
+      - main  # Adjust if needed
+
+jobs:
+  send-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Dispatch Event to Repo1
+        run: |
+          curl -X POST "https://api.github.com/repos/RaMayans007/repo1/dispatches" \
+          -H "Authorization: token ${{ secrets.WEBHOOK_PAT }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Content-Type: application/json" \
+          -d '{"event_type": "trigger-script"}'
