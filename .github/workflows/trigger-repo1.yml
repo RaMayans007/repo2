@@ -1,8 +1,8 @@
-name: Trigger Repo1 Webhook
+name: trigger_repo_1
 on:
   push:
     branches:
-      - main  # Adjust if needed
+      - main
 
 jobs:
   send-webhook:
