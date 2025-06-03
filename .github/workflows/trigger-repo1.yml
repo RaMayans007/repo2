@@ -3,7 +3,7 @@ name: Trigger repo1 Workflow
 on:
   push:
     branches:
-      - master  # or your target branch
+      - main
 
 jobs:
   trigger:
