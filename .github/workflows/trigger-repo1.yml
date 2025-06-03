@@ -3,10 +3,10 @@ name: Trigger repo1 Workflow
 on:
   push:
     branches:
-      - main  # or your desired branch
+      - main  # or your target branch
 
 jobs:
-  trigger-repo1:
+  trigger:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo1 workflow
@@ -14,4 +14,4 @@ jobs:
           curl -X POST https://api.github.com/repos/RaMayans007/repo1/dispatches \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.REPO1_TOKEN }}" \
-            -d '{"event_type":"run-script"}'
+            -d '{"event_type":"run-script","client_payload":{"source":"repo2"}}'
