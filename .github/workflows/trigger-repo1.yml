@@ -3,7 +3,7 @@ name: Trigger repo1 Workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   trigger:
